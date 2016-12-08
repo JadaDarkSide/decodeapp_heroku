@@ -26,7 +26,13 @@ this.lap = [
 	"kind3":"Lumia 640",
 	"kind4":"Lumia 532",
 	"kind5":"Lumia 830"
-}
+},
+{
+  "name": "Nathaniel Aris O Bureros",
+  "description": "GadgetStop App",
+  "repository": "https://github.com/JadaDarkSide/decodeapp_heroku.git",
+  "image": "heroku/nodejs"
+},      
 
 ];
 this.bio = [ 
@@ -87,7 +93,7 @@ let html = `
 							<ul class="dropdown">
 								<li><a href="https://www.facebook.com/SummerWhereDoWeBegin05">Facebook</a></li>
 								<li><a href="https://plus.google.com/u/0/113253070990440331406">GOOGLE PLUS</a></li>
-								<li><a href="//www.instagram.com/jada05atxhupz/">Instagram</a></li>
+								<li><a href="https://www.instagram.com/jada05atxhupz/">Instagram</a></li>
 							</ul>
 						</li>
 						<li class="btn-cta"><a href="#"  onclick="component.orderpage()"><span>Order</span></a></li>
@@ -295,7 +301,7 @@ let html = `
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
 					<h2 class="cursive-font">Our Services</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<p>Online 24/7, Credit Card or Paypal Method(if you want buy gadget) But We also have Free Shipping</p>
 				</div>
 			</div>
 			<div class="row">
@@ -323,7 +329,7 @@ let html = `
 							<i class="ti-truck"></i>
 						</span>
 						<h3>,Delivery</h3>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+						<p>We Have A Shipping If you order Gadget.</p>
 					</div>
 				</div>
 				
