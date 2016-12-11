@@ -58,176 +58,25 @@ this.bio = [
 }
 ];
 
-this.ordery = [ 
-{
-	"hideimg": "img/zenfone 2.jpg",
-	"image":"img/zenfone 2.jpg",
-	"name":"Zenfone 2",
-	"info": "Available",
-	"price": "PHP 14,695"
-	
-
-},
-{
-	"hideimg": "img/iphone 7.jpg",
-	"image":"img/iphone 7.jpg",
-	"name":"Iphone 7",
-	"info": "Available",
-	"price": "PHP32,000.00"
-	
-
-},
-{
-	"hideimg": "img/Microsoft_Nokia_Lumia_930.jpg",
-	"image":"img/Microsoft_Nokia_Lumia_930.jpg",
-	"name":"Lumia 930",
-	"info": "Available",
-	"price": "PHP11,990.00"
-	
-}, 
-{
-	"hideimg": "img/Sony.jpg",
-	"image":"img/Sony.jpg",
-	"name":"Sony Xperia Z5 ",
-	"info": "Available",
-	"price": "PHP18,500.00"
-	
-}, 
-{
-	"hideimg": "img/samsung.jpg",
-	"image":"img/samsung.jpg",
-	"name":"Samsung Galaxy S7",
-	"info": "Available",
-	"price": "PHP 17,000.00"
-	
-}, 
-{
-	"hideimg": "img/Infinix-Note-2.jpg",
-	"image":"img/Infinix-Note-2.jpg",
-	"name":"Infinix Note 2",
-	"info": "Available",
-	"price": "PHP6,290.00"
-	
-},
-]
-
 }
 
 render(html,component){
 component.innerHTML += html;
 }
 
+deleteOrder(key){   
+        let table = document.getElementById('order');
+        table.deleteRow(key);
+        this.cart.splice(key,1);
+
+        
+        this.cartInventory();
 
 
 reRender(html,component){
 component.innerHTML = html;
-}
-updateGadget(key){
-let var_artist = document.getElementById('updateArtist');
-let var_title = document.getElementById('updateTitle');
-let var_instrument = document.getElementById('updateInstrument');
-let sheet = {"artist":var_artist.value,"title":var_title.value,"instrument":var_instrument.value};
-this.cart[key] = sheet;
-this.cartInventory();	
-}
-
-GadgetDetails(val){
-		this.reRender(
-			`
-                    <div id="container">
-                        <div id="row">
-                            <div id="bookDetailsInfo">
-                                <div class="col-lg-4 col-xs-12" id="adjustDetails">
-                                    <div class="thumbnail"><img src="${this.books[key].image}"></div>
-                                </div>
-                                <div class="col-lg-8 col-xs-12" id="adjustDetails1">
-                                    <h1 id="slimfont">${this.books[key].title}</h1>
-                                    <button class="btn btn-primary btn-lg outline" onclick="component.bookUpdate(${key})">Update</button>
-                                    <button class="btn btn-primary btn-lg outline" onclick="component.deleteBook(${key})">Delete</button>
-                                    <button class="btn btn-primary btn-lg outline" onclick="component.showBookPage()">Back</button>
-                                </div>
-                                <div class="col-lg-12 col-xs-12" id="adjust100">
-                                    <ul class="list-group">
-                                      <li class="list-group-item"><span class="headername">Content:</span> ${this.books[key].content}</li>
-                                      <li class="list-group-item"><span class="headername">Date:</span> ${this.books[key].date}</li>
-                                      <li class="list-group-item"><span class="headername">Author:</span> ${this.books[key].author}</li>
-                                      <li class="list-group-item"><span class="headername">Genre:</span> ${this.books[key].genre}</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				    	
-			`,document.getElementById('bookDetails'));
-			this.showUpdateDelete();
-	}
-
-GadgetUpdateInput(val){
-let idNameRow="row"+val;
-let html = `
-<div class="col-lg-4 col-md-4 col-sm-6">
-	<a href="${this.ordery[a].image}" class="fh5co-card-item image-popup">
-		<figure>
-			<div class="overlay"><i class="ti-plus"></i></div>
-			<img src="${this.ordery[a].hideimg}" alt="Image" class="img-responsive">
-		</figure>
-		<div class="fh5co-text">
-			<input id="txtName" value="${this.ordery[a].name}">
-			<input id="txtName" value="${this.ordery[a].info}">
-			<p><span class="price cursive-font">${this.ordery[a].price}</span></p>
-			<button onclick="">Done</button>
-		</div>
-	</a>
-</div>
-`;
-this.reRender(`${html}`,document.getElementById(`${idNameRow}`));
-}
-
-readOrderList(){
-let orderList = document.getElementById('OrderList');
-let html = ``;
-for (let a=0;a<this.ordery.length;a++){
-html +=`
-<div class="col-lg-4 col-md-4 col-sm-6">
-	<a href="${this.ordery[a].image}" class="fh5co-card-item image-popup">
-		<figure>
-			<div class="overlay"><i class="ti-plus"></i></div>
-			<img src="${this.ordery[a].hideimg}" alt="Image" class="img-responsive">
-		</figure>
-		<div class="fh5co-text">
-			<h2>${this.ordery[a].name}</h2>
-			<p>${this.ordery[a].info}</p>
-			<p><span class="price cursive-font">${this.ordery[a].price}</span></p>			
-		</div>
-	</a>
-	<center><button> <a href="#" onclick"component.GadgetStop Order(${a})">Get Me</button></center>
-</div>
-
-`;
-}
-orderList.innerHTML = html;
-}
-
-readAboutList(){
-
-let aboutList = document.getElementById('GadgetList');
-let html = ``;
-for (let i=0;i<this.abouty.length;i++){
-html +=`
-
-<div class="col-md-4">
-	<img class="wew"><img src="${this.abouty[i].logo}" alt"/></img>
-	<h3>${this.abouty[i].title}</h3>
-	<p>${this.abouty[i].para}</p>
-</div>
-
-`;
 }	
-aboutList.innerHTML = html;
 }
-}
-
 
 class Component extends App{
 constructor(){		
